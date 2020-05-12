@@ -1,6 +1,6 @@
 package com.example.demo.model;
 
-import java.util.UUID;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MovieTO {
 	private int movieId;
@@ -10,7 +10,12 @@ public class MovieTO {
 	private int rating;
     private String review;
     
-	public MovieTO(int movieId, String name, int releaseDate, String genre, int rating, String review) {
+	public MovieTO(@JsonProperty("id") int movieId, 
+				   @JsonProperty("name") String name,
+				   @JsonProperty("releaseDate") int releaseDate, 
+				   @JsonProperty("genre") String genre, 
+				   @JsonProperty("rating") int rating, 
+				   @JsonProperty("review") String review) {
 		super();
 		this.movieId = movieId;
 		this.name = name;
